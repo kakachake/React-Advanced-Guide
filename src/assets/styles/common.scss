@@ -1,0 +1,10 @@
+body {
+  background-color: aquamarine;
+}
+.theStyle {
+  display: flex;
+  gap: 10px;
+  span {
+    cursor: pointer;
+  }
+}
