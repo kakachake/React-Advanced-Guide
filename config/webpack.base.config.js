@@ -33,11 +33,29 @@ const Appconfig = {
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader", "postcss-loader"],
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+          },
+          "postcss-loader",
+        ],
       },
       {
         test: /\.scss$/,
-        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                localIdentName: "[path][name]__[local]__[hash:base64:5]",
+              },
+            },
+          },
+          "postcss-loader",
+          "sass-loader",
+        ],
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/,

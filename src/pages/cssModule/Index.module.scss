@@ -1,0 +1,23 @@
+.base {
+  color: blue;
+}
+
+:global(.text_bg) {
+  background-color: pink;
+}
+
+.text {
+  composes: base;
+  background-color: antiquewhite;
+}
+.dark {
+  // 主题样式-暗色调
+  background: #000;
+  color: #fff;
+}
+.light {
+  // 主题样式-亮色调
+  border: 1px solid #000;
+  color: #000;
+  background: #fff;
+}

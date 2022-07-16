@@ -5,6 +5,11 @@ import TSX from "./pages/tsx/Index";
 import Components from "./pages/component/Index";
 import State from "./pages/state/Index.jsx";
 import Props from "./pages/props/Index.jsx";
+import LifeCycle from "./pages/lifecycle/Index";
+import Ref from "./pages/ref/Index";
+import Context from "./pages/Context/Index";
+import CssModule from "./pages/cssModule/Index";
+import HOC from "./pages/HOC/Index";
 
 const menu: any = [
   {
@@ -26,6 +31,31 @@ const menu: any = [
     name: "4_props",
     path: "/props",
     component: Props,
+  },
+  {
+    name: "5_LifeCycle",
+    path: "/LifeCycle",
+    component: LifeCycle,
+  },
+  {
+    name: "6_Ref",
+    path: "/Ref",
+    component: Ref,
+  },
+  {
+    name: "7_Context",
+    path: "/Context",
+    component: Context,
+  },
+  {
+    name: "7_CssModule",
+    path: "/CssModule",
+    component: CssModule,
+  },
+  {
+    name: "8_HOC",
+    path: "/HOC",
+    component: HOC,
   },
 ];
 
