@@ -10,6 +10,10 @@ import Ref from "./pages/ref/Index";
 import Context from "./pages/Context/Index";
 import CssModule from "./pages/cssModule/Index";
 import HOC from "./pages/HOC/Index";
+import Memo from "./pages/Memo/Index";
+import Lazy from "./pages/Lazy/Index";
+import BigData from "./pages/BigData/Index.jsx";
+import VirtualList from "./pages/VirtualList/Index.jsx";
 
 const menu: any = [
   {
@@ -56,6 +60,26 @@ const menu: any = [
     name: "8_HOC",
     path: "/HOC",
     component: HOC,
+  },
+  {
+    name: "9_Memo",
+    path: "/Memo",
+    component: Memo,
+  },
+  {
+    name: "10_Lazy",
+    path: "/Lazy",
+    component: Lazy,
+  },
+  {
+    name: "11_BigData",
+    path: "/BigData",
+    component: BigData,
+  },
+  {
+    name: "12_VirtualList",
+    path: "/VirtualList",
+    component: VirtualList,
   },
 ];
 
