@@ -97,7 +97,6 @@ console.log(Index);
 export default () => {
   return (
     <div className="box">
-      <Index />
       <HOCIndex2 />
       <button>组件外部点击</button>
     </div>

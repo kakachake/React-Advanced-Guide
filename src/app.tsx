@@ -14,6 +14,8 @@ import Memo from "./pages/Memo/Index";
 import Lazy from "./pages/Lazy/Index";
 import BigData from "./pages/BigData/Index.jsx";
 import VirtualList from "./pages/VirtualList/Index.jsx";
+import Event from "./pages/event/Index.jsx";
+import FormValidator from "./pages/formValidator/Index.jsx";
 
 const menu: any = [
   {
@@ -80,6 +82,16 @@ const menu: any = [
     name: "12_VirtualList",
     path: "/VirtualList",
     component: VirtualList,
+  },
+  {
+    name: "13_Event",
+    path: "/Event",
+    component: Event,
+  },
+  {
+    name: "14_表单验证",
+    path: "/FormValidator",
+    component: FormValidator,
   },
 ];
 
