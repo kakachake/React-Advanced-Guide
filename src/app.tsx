@@ -15,7 +15,8 @@ import Lazy from "./pages/Lazy/Index";
 import BigData from "./pages/BigData/Index.jsx";
 import VirtualList from "./pages/VirtualList/Index.jsx";
 import Event from "./pages/event/Index.jsx";
-import FormValidator from "./pages/formValidator/Index.jsx";
+import FormValidator from "./pages/formValidator/Test.jsx";
+import Model from "./pages/model/Index.jsx";
 
 const menu: any = [
   {
@@ -92,6 +93,11 @@ const menu: any = [
     name: "14_表单验证",
     path: "/FormValidator",
     component: FormValidator,
+  },
+  {
+    name: "15_自定义弹窗",
+    path: "/Model",
+    component: Model,
   },
 ];
 

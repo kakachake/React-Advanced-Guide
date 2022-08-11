@@ -1,6 +1,10 @@
-import React from "react";
-const Index = () => {
-  return <div>formval</div>;
-};
+import Form from "./Form";
+import FormItem from "./FormItem";
+import Input from "./Input";
+import Select from "./Select";
 
-export default Index;
+Form.FormItem = FormItem;
+
+export { Form, Select, Input };
+
+export default Form;

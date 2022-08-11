@@ -1,0 +1,23 @@
+.model_container {
+  transition: opacity 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.model_wrap {
+  height: 400px;
+  background-color: aliceblue;
+}
+
+.mast {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #2626269f;
+  z-index: 0;
+}
