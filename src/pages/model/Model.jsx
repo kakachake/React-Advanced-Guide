@@ -22,7 +22,6 @@ const Model = (props) => {
     visible,
     width,
   } = props;
-  console.log(children);
   const RenderFooter = () => {
     if (footer && React.isValidElement(footer)) return footer;
     return (
@@ -51,32 +50,82 @@ const Model = (props) => {
       </div>
     );
   };
+  const renderContent = React.isValidElement(content)
+    ? content
+    : children
+    ? children
+    : null;
 
   return (
-    <Dialog closeCb={closeCb} onClose={onClose} visible={visible} width={width}>
-      <RenderTop />
-      <RenderContent content={content}>{children}</RenderContent>
-      <RenderFooter />
-    </Dialog>
+    <div>
+      <Dialog
+        closeCb={closeCb}
+        onClose={onClose}
+        visible={visible}
+        width={width}
+      >
+        <RenderTop />
+        {renderContent}
+        <RenderContent content={content}>{children}</RenderContent>
+        <RenderFooter />
+      </Dialog>
+    </div>
   );
 };
 
 let ModelContainer = null;
 const modelSymbol = Symbol("$$__model__container_hidden");
 
-Model.show = function (config) {
+// Model.show = function (config) {
+//   if (ModelContainer) return;
+//   const props = { ...config, visible: true };
+//   const container = (ModelContainer = document.createElement("div"));
+//   const manager = (container[modelSymbol] = {
+//     setShow: null,
+//     mounted: false,
+//     hidden() {
+//       const { setShow } = manager;
+//       setShow && setShow(false);
+//     },
+//     destory() {
+//       ReactDOM.unmountComponentAtNode(container);
+//       document.body.removeChild(container);
+//       ModelContainer = null;
+//     },
+//   });
+//   const ModelApp = (props) => {
+//     const [show, setShow] = useState(false);
+//     manager.setShow = setShow;
+//     const { visible, ...trueProps } = props;
+//     useEffect(() => {
+//       manager.mounted = true;
+//       setShow(visible);
+//     }, []);
+//     return (
+//       <Model
+//         {...trueProps}
+//         closeCb={() => manager.mounted && manager.destory()}
+//         visible={show}
+//       ></Model>
+//     );
+//   };
+//   document.body.appendChild(container);
+//   ReactDOM.render(<ModelApp {...props} />, container);
+//   return manager;
+// };
+
+Model.show = (config) => {
   if (ModelContainer) return;
-  const props = { ...config, visible: true };
   const container = (ModelContainer = document.createElement("div"));
-  const manager = (container[modelSymbol] = {
+  const props = { ...config, visible: true };
+  const manager = (ModelContainer[modelSymbol] = {
     setShow: null,
     mounted: false,
     hidden() {
-      const { setShow } = manager;
-      setShow && setShow(false);
+      this.setShow && this.setShow(false);
     },
     destory() {
-      ReactDOM.unmountComponentAtNode(container);
+      ReactDOM.unmountComponentAtNode(ModelContainer);
       document.body.removeChild(container);
       ModelContainer = null;
     },
@@ -92,11 +141,12 @@ Model.show = function (config) {
     return (
       <Model
         {...trueProps}
-        closeCb={() => manager.mounted && manager.destory()}
         visible={show}
-      ></Model>
+        closeCb={() => manager.mounted && manager.destory()}
+      />
     );
   };
+  console.log(container);
   document.body.appendChild(container);
   ReactDOM.render(<ModelApp {...props} />, container);
   return manager;

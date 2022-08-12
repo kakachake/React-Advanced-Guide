@@ -17,6 +17,7 @@ import VirtualList from "./pages/VirtualList/Index.jsx";
 import Event from "./pages/event/Index.jsx";
 import FormValidator from "./pages/formValidator/Test.jsx";
 import Model from "./pages/model/Index.jsx";
+import Hooks from "./pages/hooks/Index.jsx";
 
 const menu: any = [
   {
@@ -98,6 +99,11 @@ const menu: any = [
     name: "15_自定义弹窗",
     path: "/Model",
     component: Model,
+  },
+  {
+    name: "16_自定义Hooks",
+    path: "/Hooks",
+    component: Hooks,
   },
 ];
 

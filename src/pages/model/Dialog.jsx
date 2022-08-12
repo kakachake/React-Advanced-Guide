@@ -12,6 +12,7 @@ const controlShow = (f1, f2, value, timer) => {
 };
 const RenderChildren = (props) => {
   const { children } = props;
+  console.log(111);
   return ReactDOM.createPortal(children, document.body);
 };
 const Dialog = (props) => {

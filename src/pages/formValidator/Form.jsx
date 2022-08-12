@@ -9,7 +9,7 @@ const Form = (
   ref
 ) => {
   const formInstance = useForm(form, initialValues);
-  const { setCallback, dispatch, ...providerFormInstance } = formInstance;
+  const { setCallback, ...providerFormInstance } = formInstance;
   setCallback({
     onFinish,
     onFinishFailed,

@@ -18,12 +18,22 @@ const Index = () => {
     setVisible(!visible);
     setNameShow(!nameShow);
   };
+  const handleModelClick = () => {
+    Model.show({
+      content: <p>确定购买《React进阶指南小册》吗</p>,
+      title: "《React进阶实践指南》",
+      onOk: () => console.log("点击确定"),
+      onCancel: () => console.log("点击取消"),
+      onClose: () => Model.hidden(),
+    });
+  };
   const [handleClose, handleOk, handleCancel] = useMemo(() => {
     const ok = () => console.log("点击确定");
     const close = () => setVisible(false);
     const cancel = () => console.log("点击取消");
     return [close, ok, cancel];
   }, []);
+
   return (
     <div>
       <Model
@@ -49,6 +59,7 @@ const Index = () => {
         model show
       </button>
       <button onClick={handleClick}> model show ( 显示作者 ) </button>
+      <button onClick={handleModelClick}> model show ( js触发 ) </button>
     </div>
   );
 };
