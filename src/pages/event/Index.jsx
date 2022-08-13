@@ -1,8 +1,8 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-export default () => {
-  const [list, setList] = useState([]);
+export default function Index() {
+  const [, setList] = useState([]);
   useEffect(() => {
     const l = new Array(10000).fill().map((_, idx) => idx + 1);
     setList(l);
@@ -42,4 +42,4 @@ export default () => {
       {/* <RenderList /> */}
     </div>
   );
-};
+}

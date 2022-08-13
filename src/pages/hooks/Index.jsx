@@ -1,6 +1,9 @@
 import React from "react";
 import { useAsyncState } from "./useAsyncState";
 import { useDebounce } from "./useDebounce";
+import UseLogExample from "./useLog/example";
+import UseQueryTableExample from "./useQueryTable/example";
+import UseReduxExample from "./useRedux/Example";
 
 const Hooks = () => {
   const [value, setValue] = useDebounce("", 400);
@@ -17,6 +20,9 @@ const Hooks = () => {
           console.log(asyncValue.current);
         }}
       />
+      <UseLogExample />
+      <UseQueryTableExample />
+      <UseReduxExample />
     </div>
   );
 };

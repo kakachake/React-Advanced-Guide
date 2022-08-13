@@ -11,7 +11,7 @@ const debounce = (cb, time) => {
 };
 
 export const useDebounce = (defaultValue, time) => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(defaultValue);
   const newChange = debounce(setValue, time);
   return [value, newChange];
 };

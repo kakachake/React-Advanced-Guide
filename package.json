@@ -46,6 +46,7 @@
   },
   "dependencies": {
     "@babel/preset-react": "^7.18.6",
+    "antd": "^4.22.4",
     "react-router": "5",
     "react-router-config": "^5.1.1",
     "react-router-dom": "5"
